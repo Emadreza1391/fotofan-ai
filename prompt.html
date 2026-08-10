@@ -1,0 +1,251 @@
+/* =====================================================
+   LESSONS PAGE
+   ===================================================== */
+
+
+/* =========================
+   LESSONS HERO
+========================= */
+
+.lessons-hero {
+
+    padding-bottom:
+        55px;
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.lessons-search {
+
+    padding:
+        10px 0 30px;
+
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+
+    padding:
+        0 0 30px;
+
+}
+
+
+.category-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.category-btn {
+
+    border:
+        1px solid
+        rgba(56, 189, 248, 0.18);
+
+    background:
+        rgba(0, 170, 255, 0.05);
+
+    color:
+        #9fb0c5;
+
+    padding:
+        10px 17px;
+
+    border-radius:
+        999px;
+
+    cursor: pointer;
+
+    font-family:
+        'Vazirmatn',
+        sans-serif;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.category-btn:hover {
+
+    color:
+        white;
+
+    border-color:
+        rgba(56, 189, 248, 0.4);
+
+    background:
+        rgba(0, 170, 255, 0.1);
+
+}
+
+
+.category-btn.active {
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #008edb,
+            #00b7ff
+        );
+
+    border-color:
+        transparent;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 170, 255, 0.2);
+
+}
+
+
+/* =========================
+   LESSON META
+========================= */
+
+.lesson-meta {
+
+    display:
+        inline-block;
+
+    color:
+        #7f95ad;
+
+    font-size:
+        12px;
+
+    margin-bottom:
+        15px;
+
+    padding:
+        5px 10px;
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+}
+
+
+/* =========================
+   LESSON CARD
+========================= */
+
+.lesson-card {
+
+    min-height:
+        360px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.lesson-card a {
+
+    margin-top:
+        auto;
+
+}
+
+
+/* =========================
+   LESSON PAGE
+========================= */
+
+.lessons-page {
+
+    padding-top:
+        25px;
+
+}
+
+
+/* =========================
+   NO RESULTS
+========================= */
+
+#lessonsNoResults {
+
+    padding:
+        60px 20px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+
+    .category-buttons {
+
+        justify-content:
+            flex-start;
+
+        overflow-x:
+            auto;
+
+        flex-wrap:
+            nowrap;
+
+        padding-bottom:
+            8px;
+
+    }
+
+
+    .category-btn {
+
+        flex-shrink:
+            0;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .lesson-card {
+
+        min-height:
+            auto;
+
+    }
+
+}

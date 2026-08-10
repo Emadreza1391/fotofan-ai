@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>فوت و فن AI | آموزش هوش مصنوعی</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="container navbar">
+
+        <a href="index.html" class="logo">
+            فوت و فن <span>AI</span>
+        </a>
+
+        <nav>
+            <a href="index.html">خانه</a>
+            <a href="lessons.html">آموزش‌ها</a>
+            <a href="tools.html">ابزارها</a>
+            <a href="about.html">درباره من</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                🤖 آموزش هوش مصنوعی و تولید محتوا
+            </span>
+
+            <h1>
+                با <strong>فوت و فن AI</strong>
+                <br>
+                هوش مصنوعی را حرفه‌ای یاد بگیر
+            </h1>
+
+            <p>
+                آموزش‌های کاربردی، ابزارهای هوش مصنوعی و
+                پرامپت‌های آماده برای یادگیری سریع‌تر
+                و تولید محتوای بهتر.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="lessons.html" class="btn primary">
+                    🚀 شروع یادگیری
+                </a>
+
+                <a href="tools.html" class="btn secondary">
+                    🛠️ مشاهده ابزارها
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<section class="search-section">
+
+    <div class="container">
+
+        <div class="search-title">
+
+            <span>🔎 جست‌وجو در آموزش‌ها</span>
+
+            <h2>
+                دنبال چه چیزی هستی؟
+            </h2>
+
+        </div>
+
+        <div class="search-box">
+
+            <span class="search-icon">
+                🔎
+            </span>
+
+            <input
+                type="search"
+                id="lessonSearch"
+                placeholder="مثلاً ChatGPT، پرامپت، تصویر، ویدیو..."
+                autocomplete="off"
+            >
+
+        </div>
+
+        <p id="searchMessage" class="search-message">
+            نام یا موضوع آموزش را وارد کن.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NEW LESSONS
+========================= -->
+
+<section class="courses" id="new-lessons">
+
+    <div class="container">
+
+        <div class="section-title section-title-right">
+
+            <span>
+                🔥 جدیدترین آموزش‌ها
+            </span>
+
+            <h2>
+                آموزش‌های جدید
+            </h2>
+
+            <p>
+                آموزش‌های جدید را ببین و یادگیری را شروع کن.
+            </p>
+
+        </div>
+
+
+        <div class="course-grid" id="lessonGrid">
+
+
+            <!-- ChatGPT -->
+
+            <article
+                class="course-card lesson-item"
+                data-search="chatgpt چت جی پی تی هوش مصنوعی متن">
+
+                <div class="course-icon">
+                    🤖
+                </div>
+
+                <span class="level">
+                    هوش مصنوعی
+                </span>
+
+                <h3>
+                    آموزش ChatGPT
+                </h3>
+
+                <p>
+                    آشنایی با ChatGPT و یادگیری روش استفاده
+                    بهتر و کاربردی‌تر از آن.
+                </p>
+
+                <a href="lessons/chatgpt.html">
+                    مشاهده آموزش ←
+                </a>
+
+            </article>
+
+
+            <!-- Prompt -->
+
+            <article
+                class="course-card lesson-item"
+                data-search="prompt پرامپت پرامپت نویسی">
+
+                <div class="course-icon">
+                    🧠
+                </div>
+
+                <span class="level">
+                    پرامپت‌نویسی
+                </span>
+
+                <h3>
+                    آموزش اصول پرامپت‌نویسی
+                </h3>
+
+                <p>
+                    یاد بگیر چطور درخواست‌های دقیق‌تر بنویسی
+                    و نتیجه بهتری از هوش مصنوعی بگیری.
+                </p>
+
+                <a href="lessons/prompt.html">
+                    مشاهده آموزش ←
+                </a>
+
+            </article>
+
+
+            <!-- Image -->
+
+            <article
+                class="course-card lesson-item"
+                data-search="image تصویر عکس تولید تصویر هوش مصنوعی">
+
+                <div class="course-icon">
+                    🎨
+                </div>
+
+                <span class="level">
+                    تولید تصویر
+                </span>
+
+                <h3>
+                    تولید تصویر با AI
+                </h3>
+
+                <p>
+                    با روش‌ها و ابزارهای تولید تصویر
+                    با هوش مصنوعی آشنا شو.
+                </p>
+
+                <a href="lessons/image-ai.html">
+                    مشاهده آموزش ←
+                </a>
+
+            </article>
+
+
+            <!-- Video -->
+
+            <article
+                class="course-card lesson-item"
+                data-search="video ویدیو فیلم تولید ویدیو">
+
+                <div class="course-icon">
+                    🎬
+                </div>
+
+                <span class="level">
+                    تولید ویدیو
+                </span>
+
+                <h3>
+                    تولید ویدیو با AI
+                </h3>
+
+                <p>
+                    با ابزارها و روش‌های ساخت ویدیو
+                    با هوش مصنوعی آشنا شو.
+                </p>
+
+                <a href="lessons/video-ai.html">
+                    مشاهده آموزش ←
+                </a>
+
+            </article>
+
+
+        </div>
+
+
+        <div id="noResults" class="no-results" hidden>
+
+            😕 آموزشی با این عبارت پیدا نشد.
+
+        </div>
+
+
+        <div class="more-lessons">
+
+            <a href="lessons.html" class="btn secondary">
+                📚 مشاهده همه آموزش‌ها
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CHANNEL
+========================= -->
+
+<section class="channel-section">
+
+    <div class="container">
+
+        <div class="channel-box">
+
+            <div class="channel-content">
+
+                <span class="badge">
+                    📢 کانال فوت و فن AI
+                </span>
+
+                <h2>
+                    آموزش‌های جدید را از دست نده!
+                </h2>
+
+                <p>
+                    برای دریافت آموزش‌های هوش مصنوعی،
+                    ابزارها، ترفندها و مطالب جدید،
+                    در کانال فوت و فن AI عضو شو.
+                </p>
+
+                <a
+                    href="https://ble.ir/join/FV9bHmcMvc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary"
+                >
+                    📲 عضویت در کانال بله
+                </a>
+
+            </div>
+
+
+            <div class="channel-icon">
+                📣
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOCIAL NETWORKS
+========================= -->
+
+<section class="social-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                🌐 شبکه‌های اجتماعی
+            </span>
+
+            <h2>
+                ما را دنبال کن
+            </h2>
+
+            <p>
+                برای دیدن آموزش‌ها و محتوای جدید
+                در شبکه‌های اجتماعی همراه ما باش.
+            </p>
+
+        </div>
+
+
+        <div class="social-grid">
+
+
+            <!-- Bale -->
+
+            <a
+                href="https://ble.ir/join/FV9bHmcMvc"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-card"
+            >
+
+                <div class="social-icon">
+                    📱
+                </div>
+
+                <div class="social-info">
+
+                    <h3>
+                        بله
+                    </h3>
+
+                    <p>
+                        عضویت در کانال فوت و فن AI
+                    </p>
+
+                </div>
+
+                <span class="social-arrow">
+                    ←
+                </span>
+
+            </a>
+
+
+            <!-- Aparat -->
+
+            <a
+                href="https://www.aparat.com/Codera"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-card"
+            >
+
+                <div class="social-icon">
+                    ▶️
+                </div>
+
+                <div class="social-info">
+
+                    <h3>
+                        آپارات
+                    </h3>
+
+                    <p>
+                        مشاهده ویدیوهای آموزشی
+                    </p>
+
+                </div>
+
+                <span class="social-arrow">
+                    ←
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHY US
+========================= -->
+
+<section class="courses">
+
+    <div class="container">
+
+        <div class="section-title section-title-right">
+
+            <span>
+                ✨ چرا فوت و فن AI؟
+            </span>
+
+            <h2>
+                یادگیری ساده و کاربردی
+            </h2>
+
+        </div>
+
+
+        <div class="course-grid">
+
+
+            <div class="course-card">
+
+                <div class="course-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    آموزش کاربردی
+                </h3>
+
+                <p>
+                    آموزش‌ها با تمرکز روی استفاده واقعی
+                    از هوش مصنوعی طراحی می‌شوند.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    ساده و قابل فهم
+                </h3>
+
+                <p>
+                    مفاهیم پیچیده را مرحله‌به‌مرحله
+                    و به زبان ساده یاد می‌گیری.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    همیشه در حال توسعه
+                </h3>
+
+                <p>
+                    آموزش‌ها و ابزارهای جدید به‌مرور
+                    به سایت اضافه خواهند شد.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 فوت و فن AI
+        </p>
+
+        <p>
+            آموزش هوش مصنوعی و تولید محتوا
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
