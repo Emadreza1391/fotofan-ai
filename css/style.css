@@ -2272,3 +2272,114 @@ footer p {
     .answers { grid-template-columns:1fr; }
     .talent-answer { min-height:60px; }
 }
+
+
+/* =====================================================
+   HOME TOP BANNER
+   Uses back.jpg from the project root
+   ===================================================== */
+
+.home-banner {
+    position: relative;
+    min-height: 390px;
+    margin: 0;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(135deg, #07111d, #0b2d4a);
+}
+
+.home-banner-image {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+}
+
+.home-banner-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.home-banner-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: linear-gradient(90deg, rgba(4, 12, 22, .88) 0%, rgba(4, 12, 22, .58) 45%, rgba(4, 12, 22, .22) 100%);
+}
+
+.home-banner-content {
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.home-banner-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 999px;
+    background: rgba(0,0,0,.18);
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 16px;
+    backdrop-filter: blur(8px);
+}
+
+.home-banner-content h2 {
+    max-width: 720px;
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.35;
+    font-weight: 900;
+    text-shadow: 0 4px 25px rgba(0,0,0,.3);
+}
+
+.home-banner-content p {
+    max-width: 650px;
+    margin: 0 0 24px;
+    color: rgba(255,255,255,.88);
+    font-size: 16px;
+    line-height: 2;
+}
+
+.home-banner-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.home-banner-buttons .btn {
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    .home-banner,
+    .home-banner-content {
+        min-height: 430px;
+    }
+
+    .home-banner-overlay {
+        background: linear-gradient(90deg, rgba(4,12,22,.84), rgba(4,12,22,.62));
+    }
+
+    .home-banner-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-banner-content p {
+        font-size: 14px;
+    }
+
+    .home-banner-buttons {
+        justify-content: center;
+    }
+}
