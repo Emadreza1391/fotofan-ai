@@ -1,251 +1,384 @@
-/* =====================================================
-   LESSONS PAGE
-   ===================================================== */
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* =========================
-   LESSONS HERO
-========================= */
+    <title>پرامپت‌های آماده | فوت و فن AI</title>
 
-.lessons-hero {
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    padding-bottom:
-        55px;
+<body>
 
-}
+<header class="header">
 
+    <div class="container navbar">
 
-/* =========================
-   SEARCH
-========================= */
+        <a href="index.html" class="logo">
+            فوت و فن <span>AI</span>
+        </a>
 
-.lessons-search {
+        <nav>
+            <a href="index.html">خانه</a>
+            <a href="lessons.html">آموزش‌ها</a>
+            <a href="prompt.html">پرامپت‌ها</a>
+            <a href="tools.html">ابزارها</a>
+            <a href="about.html">درباره من</a>
+        </nav>
 
-    padding:
-        10px 0 30px;
+    </div>
 
-}
+</header>
 
 
-/* =========================
-   CATEGORIES
-========================= */
+<main>
 
-.categories {
 
-    padding:
-        0 0 30px;
+<section class="hero">
 
-}
+    <div class="container">
 
+        <div class="section-title">
 
-.category-buttons {
+            <span>
+                🧠 کتابخانه پرامپت‌ها
+            </span>
 
-    display: flex;
+            <h1>
+                پرامپت‌های آماده هوش مصنوعی
+            </h1>
 
-    justify-content: center;
+            <p>
+                پرامپت‌های کاربردی را پیدا کن،
+                کپی کن و مستقیماً در ابزارهای هوش مصنوعی استفاده کن.
+            </p>
 
-    align-items: center;
+        </div>
 
-    gap: 10px;
+    </div>
 
-    flex-wrap: wrap;
+</section>
 
-}
 
+<section class="prompt-search">
 
-.category-btn {
+    <div class="container">
 
-    border:
-        1px solid
-        rgba(56, 189, 248, 0.18);
+        <div class="search-box">
 
-    background:
-        rgba(0, 170, 255, 0.05);
+            <span class="search-icon">
+                🔎
+            </span>
 
-    color:
-        #9fb0c5;
+            <input
+                type="search"
+                id="promptSearch"
+                placeholder="مثلاً تولید محتوا، تصویر، مطالعه..."
+            >
 
-    padding:
-        10px 17px;
+        </div>
 
-    border-radius:
-        999px;
+    </div>
 
-    cursor: pointer;
+</section>
 
-    font-family:
-        'Vazirmatn',
-        sans-serif;
 
-    font-size:
-        13px;
+<section class="prompt-categories">
 
-    font-weight:
-        600;
+    <div class="container">
 
-    transition:
-        all 0.25s ease;
+        <div class="category-buttons">
 
-}
+            <button class="category-btn active"
+                    data-category="all">
+                همه
+            </button>
 
+            <button class="category-btn"
+                    data-category="content">
+                📱 تولید محتوا
+            </button>
 
-.category-btn:hover {
+            <button class="category-btn"
+                    data-category="image">
+                🎨 تولید تصویر
+            </button>
 
-    color:
-        white;
+            <button class="category-btn"
+                    data-category="study">
+                📚 مطالعه
+            </button>
 
-    border-color:
-        rgba(56, 189, 248, 0.4);
+            <button class="category-btn"
+                    data-category="idea">
+                💡 ایده‌پردازی
+            </button>
 
-    background:
-        rgba(0, 170, 255, 0.1);
+        </div>
 
-}
+    </div>
 
+</section>
 
-.category-btn.active {
 
-    color:
-        white;
+<section class="prompt-section">
 
-    background:
-        linear-gradient(
-            135deg,
-            #008edb,
-            #00b7ff
-        );
+    <div class="container">
 
-    border-color:
-        transparent;
+        <div class="prompt-grid">
 
-    box-shadow:
-        0 8px 25px
-        rgba(0, 170, 255, 0.2);
 
-}
+            <!-- PROMPT 1 -->
 
+            <article class="prompt-card"
+                     data-category="content"
+                     data-search="تولید محتوا پست شبکه اجتماعی">
 
-/* =========================
-   LESSON META
-========================= */
+                <div class="prompt-card-header">
 
-.lesson-meta {
+                    <span class="prompt-icon">
+                        📱
+                    </span>
 
-    display:
-        inline-block;
+                    <span class="level">
+                        تولید محتوا
+                    </span>
 
-    color:
-        #7f95ad;
+                </div>
 
-    font-size:
-        12px;
+                <h3>
+                    تولید ایده برای پست
+                </h3>
 
-    margin-bottom:
-        15px;
+                <p>
+                    برای گرفتن ایده‌های جدید برای محتوای شبکه‌های اجتماعی.
+                </p>
 
-    padding:
-        5px 10px;
+                <div class="prompt-text">
+                    تو یک متخصص تولید محتوا هستی.
+                    برای موضوع «[موضوع]»،
+                    ۱۰ ایده جذاب و کاربردی برای پست
+                    شبکه‌های اجتماعی پیشنهاد بده.
+                    برای هر ایده یک عنوان کوتاه،
+                    توضیح و پیشنهاد برای تصویر ارائه کن.
+                </div>
 
-    border-radius:
-        8px;
+                <button class="copy-prompt">
+                    📋 کپی پرامپت
+                </button>
 
-    background:
-        rgba(255, 255, 255, 0.025);
+            </article>
 
-}
 
+            <!-- PROMPT 2 -->
 
-/* =========================
-   LESSON CARD
-========================= */
+            <article class="prompt-card"
+                     data-category="image"
+                     data-search="تصویر عکس تولید تصویر">
 
-.lesson-card {
+                <div class="prompt-card-header">
 
-    min-height:
-        360px;
+                    <span class="prompt-icon">
+                        🎨
+                    </span>
 
-    display:
-        flex;
+                    <span class="level">
+                        تولید تصویر
+                    </span>
 
-    flex-direction:
-        column;
+                </div>
 
-}
+                <h3>
+                    ساخت تصویر حرفه‌ای
+                </h3>
 
+                <p>
+                    برای ساخت تصاویر جذاب با ابزارهای تولید تصویر.
+                </p>
 
-.lesson-card a {
+                <div class="prompt-text">
+                    یک تصویر حرفه‌ای درباره «[موضوع]» طراحی کن.
+                    سبک تصویر مدرن و سینمایی باشد،
+                    نورپردازی حرفه‌ای،
+                    جزئیات بالا،
+                    ترکیب‌بندی جذاب،
+                    کیفیت بالا و مناسب انتشار در شبکه‌های اجتماعی.
+                </div>
 
-    margin-top:
-        auto;
+                <button class="copy-prompt">
+                    📋 کپی پرامپت
+                </button>
 
-}
+            </article>
 
 
-/* =========================
-   LESSON PAGE
-========================= */
+            <!-- PROMPT 3 -->
 
-.lessons-page {
+            <article class="prompt-card"
+                     data-category="study"
+                     data-search="درس مطالعه تحقیق خلاصه">
 
-    padding-top:
-        25px;
+                <div class="prompt-card-header">
 
-}
+                    <span class="prompt-icon">
+                        📚
+                    </span>
 
+                    <span class="level">
+                        مطالعه
+                    </span>
 
-/* =========================
-   NO RESULTS
-========================= */
+                </div>
 
-#lessonsNoResults {
+                <h3>
+                    خلاصه‌سازی مطالب
+                </h3>
 
-    padding:
-        60px 20px;
+                <p>
+                    برای خلاصه کردن مطالب درسی و متون طولانی.
+                </p>
 
-}
+                <div class="prompt-text">
+                    متن زیر را به زبان ساده خلاصه کن.
+                    ابتدا نکات اصلی را استخراج کن،
+                    سپس مطالب مهم را به صورت bullet point
+                    بنویس و در پایان یک جمع‌بندی کوتاه ارائه بده.
 
+                    متن:
+                    [متن خود را اینجا قرار بده]
+                </div>
 
-/* =========================
-   MOBILE
-========================= */
+                <button class="copy-prompt">
+                    📋 کپی پرامپت
+                </button>
 
-@media (max-width: 650px) {
+            </article>
 
 
-    .category-buttons {
+            <!-- PROMPT 4 -->
 
-        justify-content:
-            flex-start;
+            <article class="prompt-card"
+                     data-category="idea"
+                     data-search="ایده ایده پردازی خلاقیت">
 
-        overflow-x:
-            auto;
+                <div class="prompt-card-header">
 
-        flex-wrap:
-            nowrap;
+                    <span class="prompt-icon">
+                        💡
+                    </span>
 
-        padding-bottom:
-            8px;
+                    <span class="level">
+                        ایده‌پردازی
+                    </span>
 
-    }
+                </div>
 
+                <h3>
+                    ایده‌پردازی خلاقانه
+                </h3>
 
-    .category-btn {
+                <p>
+                    برای پیدا کردن ایده‌های تازه و متفاوت.
+                </p>
 
-        flex-shrink:
-            0;
+                <div class="prompt-text">
+                    برای موضوع «[موضوع]»
+                    ۱۵ ایده خلاقانه و متفاوت پیشنهاد بده.
+                    ایده‌ها باید کاربردی،
+                    قابل اجرا و مناسب مخاطب عمومی باشند.
+                    برای هر ایده دلیل جذاب بودن آن را نیز بنویس.
+                </div>
 
-        font-size:
-            12px;
+                <button class="copy-prompt">
+                    📋 کپی پرامپت
+                </button>
 
-    }
+            </article>
 
 
-    .lesson-card {
+        </div>
 
-        min-height:
-            auto;
 
-    }
+        <div id="promptNoResults"
+             class="no-results"
+             hidden>
 
-}
+            😕 پرامپتی با این مشخصات پیدا نشد.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="channel-section">
+
+    <div class="container">
+
+        <div class="channel-box">
+
+            <div class="channel-content">
+
+                <span class="badge">
+                    📢 فوت و فن AI
+                </span>
+
+                <h2>
+                    پرامپت‌های بیشتری می‌خواهی؟
+                </h2>
+
+                <p>
+                    برای دریافت پرامپت‌ها و آموزش‌های جدید
+                    در کانال فوت و فن AI عضو شو.
+                </p>
+
+                <a
+                    href="https://ble.ir/join/FV9bHmcMvc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary"
+                >
+                    📲 عضویت در کانال بله
+                </a>
+
+            </div>
+
+            <div class="channel-icon">
+                🧠
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 فوت و فن AI
+        </p>
+
+        <p>
+            آموزش هوش مصنوعی و تولید محتوا
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/prompt.js"></script>
+
+</body>
+
+</html>
