@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>چت‌بات هوش مصنوعی | فوت و فن AI</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #07111d;
+            color: #e8f1f8;
+        }
+
+        .header {
+            background: #0b1726;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            padding: 16px 20px;
+        }
+
+        .navbar {
+            max-width: 1150px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav a {
+            color: #a9bacb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .chat-wrapper {
+            width: min(1000px, calc(100% - 30px));
+            margin: 35px auto;
+        }
+
+        .chat-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .chat-title h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+        }
+
+        .chat-title p {
+            color: #8ea1b5;
+            margin: 0;
+        }
+
+        .chat-box {
+            height: 650px;
+            background: #0b1726;
+            border: 1px solid rgba(56,189,248,.15);
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0,0,0,.25);
+        }
+
+        .chat-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bot-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bot-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #102b40;
+            font-size: 23px;
+        }
+
+        .bot-name {
+            font-weight: bold;
+        }
+
+        .bot-status {
+            color: #4ade80;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .clear-btn {
+            border: 0;
+            background: rgba(239,68,68,.1);
+            color: #f87171;
+            padding: 9px 13px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 25px;
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 18px;
+        }
+
+        .message.user {
+            justify-content: flex-start;
+        }
+
+        .message.bot {
+            justify-content: flex-end;
+        }
+
+        .bubble {
+            max-width: 75%;
+            padding: 13px 16px;
+            border-radius: 17px;
+            line-height: 1.9;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .user .bubble {
+            background: #075985;
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot .bubble {
+            background: #142333;
+            border: 1px solid rgba(255,255,255,.06);
+            border-bottom-left-radius: 5px;
+        }
+
+        .input-area {
+            padding: 15px;
+            border-top: 1px solid rgba(255,255,255,.07);
+            display: flex;
+            gap: 10px;
+        }
+
+        #messageInput {
+            flex: 1;
+            resize: none;
+            min-height: 50px;
+            max-height: 130px;
+            border: 1px solid rgba(255,255,255,.1);
+            background: #07111d;
+            color: white;
+            border-radius: 14px;
+            padding: 13px 15px;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        #messageInput:focus {
+            border-color: #38bdf8;
+        }
+
+        #sendBtn {
+            width: 100px;
+            border: none;
+            border-radius: 14px;
+            background: #0284c7;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #sendBtn:hover {
+            background: #0369a1;
+        }
+
+        #sendBtn:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        .typing {
+            color: #8ea1b5;
+            font-size: 13px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .chat-wrapper {
+                width: calc(100% - 16px);
+                margin-top: 20px;
+            }
+
+            .chat-box {
+                height: calc(100vh - 180px);
+                min-height: 500px;
+                border-radius: 18px;
+            }
+
+            .bubble {
+                max-width: 88%;
+            }
+
+            .input-area {
+                padding: 10px;
+            }
+
+            #sendBtn {
+                width: 75px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="navbar">
+
+        <a href="index.html" class="logo">
+            فوت و فن <span>AI</span>
+        </a>
+
+        <nav>
+            <a href="index.html">خانه</a>
+            <a href="lessons.html">آموزش‌ها</a>
+            <a href="courses.html">دوره‌ها</a>
+            <a href="prompt.html">پرامپت‌ها</a>
+            <a href="tools.html">ابزارها</a>
+            <a href="talent.html">استعدادیابی</a>
+            <a href="about.html">درباره من</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="chat-wrapper">
+
+    <div class="chat-title">
+
+        <h1>🤖 چت‌بات فوت و فن AI</h1>
+
+        <p>
+            با دستیار هوش مصنوعی فوت و فن گفتگو کنید
+        </p>
+
+    </div>
+
+
+    <section class="chat-box">
+
+        <div class="chat-header">
+
+            <div class="bot-info">
+
+                <div class="bot-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <div class="bot-name">
+                        دستیار فوت و فن AI
+                    </div>
+
+                    <div class="bot-status">
+                        ● آماده پاسخگویی
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button class="clear-btn" onclick="clearChat()">
+                پاک کردن
+            </button>
+
+        </div>
+
+
+        <div id="messages" class="messages">
+
+            <div class="message bot">
+
+                <div class="bubble">
+                    سلام 👋
+                    
+                    من دستیار هوش مصنوعی فوت و فن AI هستم.
+                    
+                    هر سؤالی درباره هوش مصنوعی، تولید محتوا، پرامپت‌نویسی یا فناوری داری از من بپرس.
+                </div>
+
+            </div>
+
+            <div id="typing" class="typing">
+                🤖 در حال فکر کردن...
+            </div>
+
+        </div>
+
+
+        <div class="input-area">
+
+            <textarea
+                id="messageInput"
+                placeholder="پیام خود را بنویسید..."
+                rows="1"></textarea>
+
+            <button id="sendBtn">
+                ارسال
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+/*
+====================================================
+ تنظیمات API
+====================================================
+
+⚠️ این قسمت فقط برای تست است.
+
+کلید واقعی API را در سایت عمومی GitHub قرار نده.
+
+بعداً این قسمت را به Backend امن منتقل می‌کنیم.
+*/
+
+const API_KEY = "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";
+
+
+/*
+====================================================
+ تنظیمات چت
+====================================================
+*/
+
+const messagesContainer =
+    document.getElementById("messages");
+
+const messageInput =
+    document.getElementById("messageInput");
+
+const sendBtn =
+    document.getElementById("sendBtn");
+
+const typing =
+    document.getElementById("typing");
+
+
+let conversation = [];
+
+
+/*
+====================================================
+ ارسال پیام با Enter
+====================================================
+*/
+
+messageInput.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter" && !event.shiftKey) {
+
+        event.preventDefault();
+
+        sendMessage();
+
+    }
+
+});
+
+
+sendBtn.addEventListener("click", sendMessage);
+
+
+/*
+====================================================
+ نمایش پیام
+====================================================
+*/
+
+function addMessage(text, type) {
+
+    const message =
+        document.createElement("div");
+
+    message.className =
+        "message " + type;
+
+
+    const bubble =
+        document.createElement("div");
+
+    bubble.className =
+        "bubble";
+
+    bubble.textContent =
+        text;
+
+
+    message.appendChild(bubble);
+
+    messagesContainer.insertBefore(
+        message,
+        typing
+    );
+
+
+    messagesContainer.scrollTop =
+        messagesContainer.scrollHeight;
+
+}
+
+
+/*
+====================================================
+ ارسال به OpenAI
+====================================================
+*/
+
+async function sendMessage() {
+
+    const text =
+        messageInput.value.trim();
+
+
+    if (!text) {
+        return;
+    }
+
+
+    if (API_KEY === "YOUR_API_KEY_HERE") {
+
+        addMessage(
+            "⚠️ هنوز API Key تنظیم نشده است.",
+            "bot"
+        );
+
+        return;
+    }
+
+
+    addMessage(text, "user");
+
+
+    conversation.push({
+        role: "user",
+        content: text
+    });
+
+
+    messageInput.value = "";
+
+    sendBtn.disabled = true;
+
+    typing.style.display = "block";
+
+
+    try {
+
+        const response =
+            await fetch(
+                "https://api.openai.com/v1/responses",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json",
+
+                        "Authorization":
+                            "Bearer " + API_KEY
+                    },
+
+                    body: JSON.stringify({
+
+                        model: "gpt-5.4-mini",
+
+                        instructions:
+                            "تو دستیار هوش مصنوعی سایت فوت و فن AI هستی. پاسخ‌ها را مفید، دقیق، دوستانه و به زبان فارسی ارائه کن.",
+
+                        input: conversation
+
+                    })
+                }
+            );
+
+
+        if (!response.ok) {
+
+            const errorText =
+                await response.text();
+
+            throw new Error(
+                "API Error: " + errorText
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        const answer =
+            data.output_text ||
+            "متأسفانه پاسخی دریافت نشد.";
+
+
+        addMessage(
+            answer,
+            "bot"
+        );
+
+
+        conversation.push({
+
+            role: "assistant",
+
+            content: answer
+
+        });
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        addMessage(
+            "❌ در ارتباط با هوش مصنوعی مشکلی پیش آمد. اتصال API و کلید را بررسی کنید.",
+            "bot"
+        );
+
+    }
+
+
+    typing.style.display = "none";
+
+    sendBtn.disabled = false;
+
+    messageInput.focus();
+
+}
+
+
+/*
+====================================================
+ پاک کردن گفتگو
+====================================================
+*/
+
+function clearChat() {
+
+    conversation = [];
+
+
+    messagesContainer.innerHTML = `
+
+        <div class="message bot">
+
+            <div class="bubble">
+
+                سلام 👋
+
+                من دستیار هوش مصنوعی فوت و فن AI هستم.
+
+                چه کمکی می‌توانم به شما بکنم؟
+
+            </div>
+
+        </div>
+
+        <div id="typing" class="typing">
+
+            🤖 در حال فکر کردن...
+
+        </div>
+
+    `;
+
+
+    typing =
+        document.getElementById("typing");
+
+}
+
+</script>
+
+</body>
+</html>
